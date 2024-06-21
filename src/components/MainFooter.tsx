@@ -1,35 +1,74 @@
-import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
+import * as React from "react";
+import { styled } from "@mui/material/styles";
+import Box from "@mui/material/Box";
+import Paper from "@mui/material/Paper";
+import Grid from "@mui/material/Grid";
+import { Typography, useMediaQuery, useTheme } from "@mui/material";
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: 'center',
-  color: theme.palette.text.secondary,
-}));
+const ResponsiveComponent = () => {
+  const theme = useTheme();
+  const isSmUp = useMediaQuery(theme.breakpoints.up('sm'));
 
-export default function BasicGrid() {
   return (
-    <Box sx={{borderTop: '1px solid #000',bottom: 0,left: 0, right: 0,p: 4,backgroundColor: '#f9f9f9',textAlign: 'center',
-      position: 'fixed', }}>
-      <Grid container spacing={2}>
-        <Grid item xs={8}>
-          <Item>xs=8</Item>
+    <Box
+      sx={{
+        borderTop: "1px solid #000",
+        bottom: 0,
+        left: 0,
+        right: 0,
+        p: 0.75,
+        backgroundColor: "#1976d2",
+        textAlign: "center",
+        position: "fixed",
+      }}
+    >
+      <Grid container spacing={{ xs: 2, md: 3 }} width="100%" mt={0} ml={0}  >
+        <Grid item xs={12} md={4} sm={6}>
+          {isSmUp ? (
+            <Typography >Variable width content</Typography>
+          ) : (
+            <WhatsAppIcon />
+          )}
         </Grid>
-        <Grid item xs={4}>
-          <Item>xs=4</Item>
+          <Grid item xs={12} md={4}  sm={6}>
+            {isSmUp ? (
+              <Typography>Variable width content</Typography>
+            ) : (
+              <WhatsAppIcon />
+            )}
+          </Grid>
+          <Grid item xs={12} md={4}  sm={6}>
+            {isSmUp ? (
+              <Typography>Variable width content</Typography>
+            ) : (
+              <WhatsAppIcon />
+            )}
+          </Grid>
+          <Grid item xs={12} md={4}  sm={6}>
+            {isSmUp ? (
+              <Typography>Variable width content</Typography>
+            ) : (
+              <WhatsAppIcon />
+            )}
+          </Grid>
+          <Grid item xs={12} md={4}  sm={6}>
+            {isSmUp ? (
+              <Typography>Variable width content</Typography>
+            ) : (
+              <WhatsAppIcon />
+            )}
+          </Grid>
+          <Grid item xs={12} md={4}  sm={6}>
+            {isSmUp ? (
+              <Typography>Variable width content</Typography>
+            ) : (
+              <WhatsAppIcon />
+            )}
+          </Grid>
         </Grid>
-        <Grid item xs={4}>
-          <Item>xs=4</Item>
-        </Grid>
-        <Grid item xs={8}>
-          <Item>xs=8</Item>
-        </Grid>
-      </Grid>
     </Box>
   );
-}
+};
+
+export default ResponsiveComponent;

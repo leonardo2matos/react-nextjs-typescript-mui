@@ -20,6 +20,7 @@ import MainDrawer from './MainDrawer';
 import MainFooter from './MainFooter'
 
 
+
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -86,7 +87,7 @@ export default function PrimarySearchAppBar() {
   const handleMenuClose = () => {
     setAnchorEl(null);
     handleMobileMenuClose();
-    router.push('/subscribe')
+    router.push('/signin')
   };
 
   const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
