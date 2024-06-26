@@ -8,6 +8,7 @@ export default function MainLayout(props: MainLayoutProps) {
   return (
     <div>
       <MainAppBar />
+     
       <main>{props.children}</main>
       <MainFooter/>
     </div>

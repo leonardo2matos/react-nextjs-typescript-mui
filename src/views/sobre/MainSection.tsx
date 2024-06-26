@@ -6,7 +6,7 @@ export default function MainSection () {
     return (
         <>
             <Typography variant="h1">
-                Test
+                
             </Typography>
             
             
